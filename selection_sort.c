@@ -36,7 +36,7 @@ int main(void)
     selection_sort(arr, size);  // currently ascending order
 
     for (int i = 0; i < size; i++)
-	printf("%i, ", arr[i]);
+		printf("%i, ", arr[i]);
 
     return 0;
 }
