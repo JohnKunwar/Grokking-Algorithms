@@ -10,10 +10,10 @@
 
 #include <stdio.h>
 
-int * quick_sort(int *arr, int size)
+void quick_sort(int *arr, int size)
 {
     if (size < 2) // if the element in the array is either 0 or 1 then just return the array base case
-	return arr;
+	return ;
     else
 	{
 	    int pivot = arr[0]; // pivot as the first element
@@ -49,7 +49,7 @@ int * quick_sort(int *arr, int size)
 		    arr[i] = right_pivot_arr[j];
 		}
 
-	    return arr;
+	    return ;
 	}
 }
 int main(void)
