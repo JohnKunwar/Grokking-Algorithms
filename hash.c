@@ -68,7 +68,7 @@ int hashFunction(struct hashMap *mp, char *key)
 void hashInsert(struct hashMap *mp, char *key, char *value)
 {
     // creating a new node
-    struct node *new = (struct node *) malloc(sizeof(struct node *));
+    struct node *new = (struct node *) malloc(sizeof(struct node));
     setNode(new, key, value);
 
     int bucket_item = hashFunction(mp, key);
@@ -78,7 +78,7 @@ void hashInsert(struct hashMap *mp, char *key, char *value)
 	{
 	    if (strcmp(key, curr->key) == 0)
 		{
-		    mp->arr[bucket_item]->value = value;
+		    curr->value = value;
 		    return ;
 		}
 	    curr = curr->next;
