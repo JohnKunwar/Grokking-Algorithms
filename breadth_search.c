@@ -313,7 +313,7 @@ int main(void)
     hashInsert(&graph, "alice", "peggy", 0);
 
     hashInsert(&graph, "claire", "thom", 0);
-    hashInsert(&graph, "claire", "jonny", 1);
+    hashInsert(&graph, "claire", "jon", 1);
 
     printf("%s", breadth_search(&graph, 'j'));
       
