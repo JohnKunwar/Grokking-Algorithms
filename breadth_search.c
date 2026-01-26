@@ -298,7 +298,7 @@ int main(void)
     // And this is my friend's friend list
     //bob -> [anuj, peggy]
     //alice -> [peggy]
-    //claire -> [jonny]
+    //claire -> [jon]
     
     struct hashMap graph;
     hashmapInit(&graph);
