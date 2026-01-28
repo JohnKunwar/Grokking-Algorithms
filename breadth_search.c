@@ -35,7 +35,7 @@ void init_queue(struct queue *qu)
 void enqueue(struct queue *qu, char *value)
 {
     if (qu->end == QUEUE_SIZE)
-	return;
+		return;
     
     qu->arr[qu->end] = value;
     qu->end++;
@@ -45,7 +45,7 @@ void enqueue(struct queue *qu, char *value)
 char * dequeue(struct queue *qu)
 {
     if (qu->start == qu->end)
-	return NULL;
+		return NULL;
     
     return qu->arr[qu->start++];
 }
@@ -193,7 +193,7 @@ char * hashSearch(struct hashMap *mp, char * key, int index)
 int hashCount(struct hashMap *mp, char *key)
 {
     if (hashSearch(mp, key, 0) == NULL)
-	return 0;
+		return 0;
 
     return mp->arr[hashFunction(mp, key)]->size;
 }
