@@ -57,7 +57,7 @@ void printfilename(char *start)
     
     char *next;
     while(next = dequeue(&l_direct)){
-	printf("📁%s\n", next);
+		printf("📁%s\n", next);
 	
 	struct dirent **entries; // scandir assigns array of entries
 	int n; // scandir returns number of entries
@@ -67,22 +67,22 @@ void printfilename(char *start)
 	    {
 		for(int i = 0; i < n; i++)
 		    {
-			if(strcmp(entries[i]->d_name,".") == 0 || strcmp(entries[i]->d_name,"..") == 0)
-			    {
-				free(entries[i]);
-				continue;
-			    }
+				if(strcmp(entries[i]->d_name,".") == 0 || strcmp(entries[i]->d_name,"..") == 0)
+			    	{
+						free(entries[i]);
+						continue;
+			    	}
 			
 			char *nextpath = malloc(strlen(entries[i]->d_name) + strlen(next) + 2);
 			sprintf(nextpath, "%s/%s", next, entries[i]->d_name);
 			if (entries[i]->d_type == DT_DIR)
 			    {
-				enqueue(&l_direct,nextpath);
+					enqueue(&l_direct,nextpath);
 			    }
 			else
 			    {
-				printf("📃%s\n", entries[i]->d_name);
-				free(nextpath);
+					printf("📃%s\n", entries[i]->d_name);
+					free(nextpath);
 			    }
 			free(entries[i]);			
 		    }
