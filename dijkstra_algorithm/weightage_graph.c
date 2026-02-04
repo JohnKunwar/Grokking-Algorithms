@@ -18,8 +18,8 @@ int main(void)
     // Initial table
     /*   A  B  C  D  E  F
 A        U  5  2  M  M  M
-B	 U  U  U  4  2  M
-C	 U  8  U  M  7  M
+B	 	 U  U  U  4  2  M
+C	 	 U  8  U  M  7  M
 D        U  U  U  U  6  3
 E        U  U  U  U  U  7
 F        U  U  U  U  U  U
