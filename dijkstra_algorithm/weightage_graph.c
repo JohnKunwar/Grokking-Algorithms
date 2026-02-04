@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
-
+// the solution works. The result is store in the first row, last column as the shortest weight value
 // solution for graph2.png
 void printgraph(int arr[][6])
 {
@@ -29,23 +29,23 @@ F        U  U  U  U  U  U
     weight_graph[0][0] = -1;  // A->A
     weight_graph[0][1] = 5;   // A -> B
     weight_graph[0][2] = 2;   // A -> C
-    weight_graph[0][3] = INT_MAX; // A -> D 
-    weight_graph[0][4] = INT_MAX;  // A -> E
-    weight_graph[0][5] = INT_MAX; // A -> F
+    weight_graph[0][3] = 10000; // A -> D 
+    weight_graph[0][4] = 10000;  // A -> E
+    weight_graph[0][5] = 10000; // A -> F
 
     weight_graph[1][0]  = -1; // B -> A
     weight_graph[1][1]  = -1; // B -> B
     weight_graph[1][2]  = -1; // B -> C
     weight_graph[1][3]  = 4; // B -> D
     weight_graph[1][4]  = 2; // B -> E
-    weight_graph[1][5]  = INT_MAX; // B -> F
+    weight_graph[1][5]  = 10000; // B -> F
 
     weight_graph[2][0] = -1; // C -> A
     weight_graph[2][1] = 8; // C -> B
     weight_graph[2][2] = -1; // C -> C
-    weight_graph[2][3] = INT_MAX; // C -> D
+    weight_graph[2][3] = 10000; // C -> D
     weight_graph[2][4] = 7; // C -> E
-    weight_graph[2][5] = INT_MAX; // C -> F
+    weight_graph[2][5] = 10000; // C -> F
 
     weight_graph[3][0] = -1; // D -> A
     weight_graph[3][1] = -1; // D -> B
@@ -65,10 +65,10 @@ F        U  U  U  U  U  U
 
     // Implementating weightage graph by Dijkistra algorithm
     int prev_value = -1; 
-    for (int i = 0; i < col; i++)
+    for (int i = 0; i < col - 1; i++)
 	{
 	    // finding the lowest from first row
-	    int lowest = INT_MAX, index; // where index is the index
+	    int lowest = 10000, index; // where index is the index
 	    for (int j = 0; j < col - 1; j++)
 		{
 		    if (weight_graph[0][j] < lowest && weight_graph[0][j] > prev_value)
@@ -77,7 +77,7 @@ F        U  U  U  U  U  U
 			    index = j;
 			}
 		}
-	    prev_value = lowest;
+	    prev_value = lowest;pppp
 	    
 
 	    for (int k = 0; k < col; k++)
@@ -88,7 +88,6 @@ F        U  U  U  U  U  U
 
 			    if (sum < weight_graph[0][k]) // updating the node value of of first row
 				{
-				    printf("sum %i\n", sum);
 				    weight_graph[0][k] = sum;
 				}
 			}
@@ -97,7 +96,8 @@ F        U  U  U  U  U  U
 	}
 
     printgraph(weight_graph);
+
+    printf("Therefore the shortest part from A to F takes %i unit.\n", weight_graph[0][5]);
     return 0;
 }
-// Broken fix tommorow
-// Also add better README
+
