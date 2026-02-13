@@ -19,7 +19,7 @@ void insert_set (struct link_list *set, int count, ...);  // function to insert 
 void init_set(struct link_list *set);  // should run whenever you want to create new set
 void print_set (struct link_list *set); // print the element in set
 void remove_set (struct link_list *set, int count,...); // remove a element from set
-void union_set (spptruct link_list *set1, struct link_list *set2, struct link_list *set3); // performs AUB 
+void union_set (struct link_list *set1, struct link_list *set2, struct link_list *set3); // performs AUB 
 void intersection_set(struct link_list *set1, struct link_list *set2, struct link_list *set3);// performs A intersection B
 void difference_set(struct link_list *set1, struct link_list *set2, struct link_list *set3); // performs A - B 
 
