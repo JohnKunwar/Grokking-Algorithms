@@ -99,6 +99,7 @@ void intersection_set(struct link_list *set1, struct link_list *set2, struct lin
 		    if (strcmp(tmp->value, set1->value) == 0)
 			{
 			    insert_set(set3, 1, tmp->value);
+
 			    break;
 			}
 		    
@@ -116,6 +117,7 @@ void union_set (struct link_list *set1, struct link_list *set2, struct link_list
     // adds set1 element
     while (set1 != NULL)
 	{
+
 	    insert_set(set3, 1, set1->value);
 	    set1 = set1->next;
 	}
@@ -145,6 +147,7 @@ void remove_set (struct link_list *set,int count, ...)
 
 		    if (strcmp(next->value, curr) == 0)
 			{
+
 			    prev->next = next->next;
 			    free(next);
 			    break;
